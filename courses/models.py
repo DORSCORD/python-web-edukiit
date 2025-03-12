@@ -17,7 +17,7 @@ class Subject(models.Model):
     
 class Courses(models.Model):
     owner = models.ForeignKey(User, related_name='courses_created', on_delete=models.CASCADE, verbose_name='Викладач')
-    Subject = models.ForeignKey(Subject, related_name='courses', on_delete=models.CASCADE, verbose_name='Спеціалізація')
+    subject = models.ForeignKey(Subject, related_name='courses', on_delete=models.CASCADE, verbose_name='Спеціалізація')
     title = models.CharField(max_length=200, verbose_name="Назва")
     slug = models.SlugField(max_length=200, unique=True)
     overview = models.TextField(verbose_name="Опис")
