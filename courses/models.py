@@ -30,3 +30,9 @@ class Courses(models.Model):
     
     def __str__(self):
         return self.title
+
+
+#class Module(models.Model):
+#    course = models.ForeignKey(course, related_name='modules', on_delete=models.CASCADE, verbose_name='курс')
+#    title = models.CharField(max_length=500, verbose_name="Назва")
+#    description = models.TextField(blank=True)
