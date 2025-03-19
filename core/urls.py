@@ -23,11 +23,11 @@ from django.urls import path
 from courses.views import HomeView
 
 urlpatterns = [
-    path('account/login/', auth_views.LoginView.as_view(), name="login"),
-    path('account/logout/', auth_views.LoginView.as_view(), name="logout"),
+    path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
+    path('accounts/logout/', auth_views.LogoutView.as_view(next_page=settings.LOGOUT_REDIRECT_URL), name='logout'),
     path('admin/', admin.site.urls),
     path('', HomeView.as_view(), name='home')
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
