@@ -26,10 +26,9 @@
               </li>
               {% if request.user.is_authenticated %}
               <li class="nav-item">
-                <form method="post" action="{% url 'logout' %}">
-                  {% csrf_token %}
-                  <button type="submit" class="btn btn-link text-decoration-none">Вихід</button>
-                </form>
+                <a class="nav-link active" href="{% url 'manage_course_list' %}">
+                  Мої курси
+                </a>
               </li>
               {% else %}
               <li class="nav-item">
