@@ -124,9 +124,13 @@ class ContentDeleteView(View):
         content.delete()
         return redirect('module_content_list', module.id)
     
-class ModuleContentListView(TemplateResponseMixin):
+class ModuleContentListView(TemplateResponseMixin, View):
     template_name = 'courses/manage/module/content_list.html'
+    content_types=['text', 'file', 'image', 'url', 'video']
 
     def get(self, request, module_id):
         module = get_object_or_404(Module, id=module_id, course__owner=request.user)
-        return self.render_to_response({'module': module})
+        return self.render_to_response({
+            'module': module,
+            'content_types': self.content_types
+            })
