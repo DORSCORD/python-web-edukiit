@@ -18,7 +18,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
-from django.urls import path, include
+from django.urls import include, path
 
 from courses.views import CourseListView
 
@@ -27,6 +27,7 @@ urlpatterns = [
     path('accounts/logout/', auth_views.LogoutView.as_view(next_page=settings.LOGOUT_REDIRECT_URL), name='logout'),
     path('admin/', admin.site.urls),
     path('course/', include('courses.urls')),
+    path('students/', include('students.urls')),
     path('', CourseListView.as_view(), name='course_list')
 ]
 
