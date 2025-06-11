@@ -43,7 +43,15 @@ INSTALLED_APPS = [
     'students',
     'crispy_forms',
     'crispy_bootstrap5',
+    'embed_video',
+    'rest_framework',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permission.DjangoModelPermissionOrAnonReadOnly'
+    ]
+}
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 
