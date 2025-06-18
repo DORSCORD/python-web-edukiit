@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(1+ww8x68w^_(0uz@1w8q@=tt%-jq2a3f%$12#+cf+g$6yxi-2'
+SECRET_KEY = 'django-insecure-w_&-*3@t^0-2)fey6+fc@ls^3b&+&j1eu0le_29kwu5^gx-5a9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -44,18 +44,18 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     'embed_video',
-    'rest_framework',
+    'rest_framework'
 ]
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permission.DjangoModelPermissionOrAnonReadOnly'
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -147,5 +147,5 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'student_course_list'
-LOGIN__URL = 'login'
-LOGOUT__URL = 'logout'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
